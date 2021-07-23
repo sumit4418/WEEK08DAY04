@@ -1,0 +1,27 @@
+JavaScript Runtime Environment.
+
+JavaScript single-threaded model
+JavaScript is a single-threaded programming language. In other words, it can do only one thing at a time.
+
+JavaScript engine executes a script from the top and works its way down creating execution contexts and pushing and popping functions onto and off the call stack.
+
+If you have a function that takes a long time to execute, then you cannot do anything on the web browser during the function’s execution. The webpage just hangs.
+
+A function that takes a long time to execute is known as a blocking function. Technically, the blocking functions block all the interactions with the webpage such as mouse click.
+
+Some examples of blocking functions are the functions that download files from a remote server or functions that call an API from an external server.
+    As we learn setTimeOut(Which is asynchronous function and can run parallal with other executing function)It is the part of browser API's. Where in API it will stay for time that we set the timing in function.After that time cross it will send it to call Queue for furture process.
+
+As mentioned earlier that JavaScript can do only one thing at a time. However, it’s more precise to say that the JavaScript runtime can do one thing at a time.
+
+The web browser also has other components, not just the JavaScript engine. When you make a call to the setTimeout() function, an AJAX call, or click a button, the web browser is capable of doing these activities concurrently and asynchronously.
+
+The setTimeout(), AJAX calls, and DOM events are parts of Web APIs of the web browser.
+
+Event Loop: 
+    --The event loop is a constantly running process that monitors both the callback queue and the call stack.
+    -If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback queue to the call stack. If the callback queue is empty, nothing will happen.
+
+    WHich monitors the call stack as well as Call Queue.
+    *It see in call Queue is there any function available for execution. if it is there it will take that function and put it in to the call stack for execution.(But it also monitors Call stack whether it is empty or not, if other fuctions are getting executed then it will wait until it gets empty, then only it will send those call queue functions for the executaion.)
+

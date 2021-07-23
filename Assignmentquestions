@@ -1,0 +1,19 @@
+4. How Creation phase and Execution phase works? Explain in detail.
+    --WHen javscript engine take source code form the script to execute, that create one Execution Contexts.And...
+        That execution contexts has two phases,
+        1. Creation phase
+        2. Execution Phase.
+    In Creation Phase--For this initial phase or creation phase when javascript code run for the first time it create Global Execution Contexts.And it will follow following steps as given bellow..
+        * Create a global object i.e. "window" in the web browser or global in Node.js.
+        * Create a "this" object binding which points to the global object above.
+        * Setup a memory heap for storing variables and function values.
+        * Store function declarion in Memory Heap and Variables within the Global Execution Context with the initial values as "undefined".
+        for Example variable let a = undefined;
+                             let b = undefined;
+                             
+    *After the creation phase, the global execution context moves to the execution phase.*
+    In Execution Phase:- DUring this phase javascript Engine execute code line by line.
+            *And in this execution phase it assigns values to variablesand executes the functions calls.
+            * For every function call, the JavaScript engine creates a new Function Execution Context. The Function Execution Context is similar to the Global Execution Context, but instead of creating the global object, it creates the arguments object that contains a reference to all the parameters passed into the function.
+
+        
